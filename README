@@ -1,0 +1,17 @@
+This program will demonstrate the BTree data structure.
+
+When you run this program, you can choose to enter your data by:
+   1.  Manually - You enter the data 1 by 1 (by select 1 from the menu)
+   2.  Automatically - You can enter the file name which contains your data and
+                       the program will read the file and insert the data
+                       accordingly (by select 2 from the menu)
+
+After the data is inserted, you can perform the following:
+   1. Insert another data - Similar with insertion
+   2. Search Data - This will return a nodes which contains the data you look
+                    for (by select 3 from the menu)
+   3. Print - You can print the tree is
+      1)  In-Order Travelsal       (by select 4 from the menu)
+      2)  Level Order Traversal    (by select 5 from the menu)
+
+At the end, you can select 6 to quit this program

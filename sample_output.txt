@@ -1,0 +1,795 @@
+/Users/stevenang/CLionProjects/BTree2/cmake-build-debug/BTree2
+***********************************************************************************************
+*  CSCI 6620 Data Struture                                                                    *
+*  Programming Assignment No. 8D                                                              *
+*  BTree                                                                                      *
+*                                                                                             *
+*  Submitted by:  ANG, STEVEN KHO                                                             *
+*                                                                                             *
+*  This program can:                                                                          *
+*     1. Create a BTree                 .                                                     *
+*     2. User can do the following actions:                                                   *
+*        - Add an item to the tree                                                            *
+*        - Search the nodes that contains the item you looking for.                           *
+*        - Print out the complete tree in In-Order Traversal                                  *
+*        - Print out the complete tree in Level-Order Traversal                               *
+*                                                                                             *
+***********************************************************************************************
+
+
+Please choose from the following action.  Please enter the number of action you want to execute:
+	1. Insert an item to the BTree.
+	2. Insert a data by reading data file.
+	3. Search an item from BTree.
+	4. Print in In-Order Traversal.
+	5. Print in Level-Order Traversal
+	6. Quit
+
+Please enter the action code: 2
+	Read DATA File and Build a BTree
+		Please enter your data file's name: data.txt
+
+	The file name you inputed is 'data.txt'.
+	File 'data.txt' opened.
+	BTree - Insert 40
+		BTNode - insertItem
+			The node is a leaf
+			Insert 40 at [].
+			After insertion: [40].
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [40].
+
+	BTree - Insert 70
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is a leaf
+			Insert 70 at [40].
+			After insertion: [40, 70].
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [40, 70].
+
+	BTree - Insert 65
+		Root is no need for split yet
+		Root's item count: 2
+		BTNode - insertItem
+			The node is a leaf
+			Insert 65 at [40, 70].
+			After insertion: [40, 65, 70].
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [40, 65, 70].
+
+	BTree - Insert 10
+		Root is no need for split yet
+		Root's item count: 3
+		BTNode - insertItem
+			The node is a leaf
+			Insert 10 at [40, 40, 65].
+			After insertion: [10, 40, 65, 70].
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [10, 40, 65, 70].
+
+	BTree - Insert 100
+		Root is no need for split yet
+		Root's item count: 4
+		BTNode - insertItem
+			The node is a leaf
+			Insert 100 at [10, 40, 65, 70].
+			After insertion: [10, 40, 65, 70, 100].
+		BTNode - End of Insert
+		The root node is full.  Current root will be splitted.
+		Split Node
+			Move 70 to new node.
+			Move 100 to new node.
+			Size of Root node: 1
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 20
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 20 at [10, 40].
+			After insertion: [10, 20, 40].
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 30
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 30 at [10, 20, 40].
+			After insertion: [10, 20, 30, 40].
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 80
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 80 at [70, 100].
+			After insertion: [70, 80, 100].
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 85
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 85 at [70, 80, 100].
+			After insertion: [70, 80, 85, 100].
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 5
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 5 at [10, 10, 20, 30].
+			After insertion: [5, 10, 20, 30, 40].
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 30 to new node.
+			Move 40 to new node.
+			Size of Root node: 2
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [20, 65].
+
+	BTree - Insert 90
+		Root is no need for split yet
+		Root's item count: 2
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 90 at [70, 80, 85, 100].
+			After insertion: [70, 80, 85, 90, 100].
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 90 to new node.
+			Move 100 to new node.
+			Size of Root node: 3
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [20, 65, 85].
+
+	BTree - Insert 392
+		Root is no need for split yet
+		Root's item count: 3
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 392 at [90, 100].
+			After insertion: [90, 100, 392].
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [20, 65, 85].
+
+	BTree - Insert 201
+		Root is no need for split yet
+		Root's item count: 3
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 201 at [90, 100, 392].
+			After insertion: [90, 100, 201, 392].
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [20, 65, 85].
+
+	BTree - Insert 111
+		Root is no need for split yet
+		Root's item count: 3
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 111 at [90, 100, 201, 201].
+			After insertion: [90, 100, 111, 201, 392].
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 201 to new node.
+			Move 392 to new node.
+			Size of Root node: 4
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [20, 65, 85, 111].
+
+	BTree - Insert 50
+		Root is no need for split yet
+		Root's item count: 4
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 50 at [30, 40].
+			After insertion: [30, 40, 50].
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [20, 65, 85, 111].
+
+	BTree - Insert 55
+		Root is no need for split yet
+		Root's item count: 4
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 55 at [30, 40, 50].
+			After insertion: [30, 40, 50, 55].
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [20, 65, 85, 111].
+
+	BTree - Insert 60
+		Root is no need for split yet
+		Root's item count: 4
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 60 at [30, 40, 50, 55].
+			After insertion: [30, 40, 50, 55, 60].
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 55 to new node.
+			Move 60 to new node.
+			Size of Root node: 5
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+		The root node is full.  Current root will be splitted.
+		Split Node
+			Move 85 to new node.
+			Move node 3 to spot 0 of the newNode.
+			Move 111 to new node.
+			Move node 4 to spot 1 of the newNode.
+			Size of Root node: 1
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 87
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 87 at [90, 90].
+			After insertion: [87, 90, 100].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 56
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 56 at [55, 60].
+			After insertion: [55, 56, 60].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 78
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 78 at [70, 80].
+			After insertion: [70, 78, 80].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 777
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 777 at [201, 392].
+			After insertion: [201, 392, 777].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 888
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 888 at [201, 392, 777].
+			After insertion: [201, 392, 777, 888].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 911
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 911 at [201, 392, 777, 888].
+			After insertion: [201, 392, 777, 888, 911].
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 888 to new node.
+			Move 911 to new node.
+			Size of Root node: 3
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 103
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 103 at [87, 90, 100].
+			After insertion: [87, 90, 100, 103].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 176
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 176 at [201, 201].
+			After insertion: [176, 201, 392].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 566
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 566 at [176, 201, 392].
+			After insertion: [176, 201, 392, 566].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 556
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 556 at [176, 201, 392, 566].
+			After insertion: [176, 201, 392, 556, 566].
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 556 to new node.
+			Move 566 to new node.
+			Size of Root node: 4
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 345
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 345 at [176, 201].
+			After insertion: [176, 201, 345].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 890
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 890 at [888, 911].
+			After insertion: [888, 890, 911].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 987
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 987 at [888, 890, 911].
+			After insertion: [888, 890, 911, 987].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 639
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 639 at [556, 566].
+			After insertion: [556, 566, 639].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 123
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 123 at [176, 176, 201].
+			After insertion: [123, 176, 201, 345].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65].
+
+	BTree - Insert 234
+		Root is no need for split yet
+		Root's item count: 1
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 234 at [123, 176, 201, 345].
+			After insertion: [123, 176, 201, 234, 345].
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 234 to new node.
+			Move 345 to new node.
+			Size of Root node: 5
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 392 to new node.
+			Move node 3 to spot 0 of the newNode.
+			Move 777 to new node.
+			Move node 4 to spot 1 of the newNode.
+			Size of Root node: 2
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65, 201].
+
+	BTree - Insert 101
+		Root is no need for split yet
+		Root's item count: 2
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 101 at [87, 90, 100, 103].
+			After insertion: [87, 90, 100, 101, 103].
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 101 to new node.
+			Move 103 to new node.
+			Size of Root node: 3
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65, 201].
+
+	BTree - Insert 399
+		Root is no need for split yet
+		Root's item count: 2
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 399 at [556, 556, 566].
+			After insertion: [399, 556, 566, 639].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65, 201].
+
+	BTree - Insert 500
+		Root is no need for split yet
+		Root's item count: 2
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 500 at [399, 556, 556, 566].
+			After insertion: [399, 500, 556, 566, 639].
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 566 to new node.
+			Move 639 to new node.
+			Size of Root node: 3
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65, 201].
+
+	BTree - Insert 799
+		Root is no need for split yet
+		Root's item count: 2
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 799 at [888, 888, 890, 911].
+			After insertion: [799, 888, 890, 911, 987].
+		BTNode - End of Insert
+			Item count: 5
+		Split Node
+			Move 911 to new node.
+			Move 987 to new node.
+			Size of Root node: 4
+			Size of new node: 2
+			Size of Child Node: 2
+		Split Node - End
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65, 201].
+
+	BTree - Insert 666
+		Root is no need for split yet
+		Root's item count: 2
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is not a leaf
+		BTNode - insertItem
+			The node is a leaf
+			Insert 666 at [566, 639].
+			After insertion: [566, 639, 666].
+		BTNode - End of Insert
+		BTNode - End of Insert
+		BTNode - End of Insert
+	BTree - End of Insert
+	Root Node after insertion: [65, 201].
+
+
+
+Please choose from the following action.  Please enter the number of action you want to execute:
+	1. Insert an item to the BTree.
+	2. Insert a data by reading data file.
+	3. Search an item from BTree.
+	4. Print in In-Order Traversal.
+	5. Print in Level-Order Traversal
+	6. Quit
+
+Please enter the action code: 3
+	Search BTree:
+		Please enter the number you are looking for: 100
+			The number you are looking for is 100
+			Item found.  The node contains the target is [85, 100, 111].
+
+
+
+Please choose from the following action.  Please enter the number of action you want to execute:
+	1. Insert an item to the BTree.
+	2. Insert a data by reading data file.
+	3. Search an item from BTree.
+	4. Print in In-Order Traversal.
+	5. Print in Level-Order Traversal
+	6. Quit
+
+Please enter the action code: 4
+	Print BTree in IN-Order Traversal: 5 10 20 30 40 50 55 56 60 65 70 78 80 85 87 90 100 101 103 111 123 176 201 234 345 392 399 500 556 566 639 666 777 799 888 890 911 987
+
+
+Please choose from the following action.  Please enter the number of action you want to execute:
+	1. Insert an item to the BTree.
+	2. Insert a data by reading data file.
+	3. Search an item from BTree.
+	4. Print in In-Order Traversal.
+	5. Print in Level-Order Traversal
+	6. Quit
+
+Please enter the action code: 5
+	Print BTree in Level-Order Traversal.
+		Level: 1
+			[65, 201].
+
+		Level: 2
+			[20, 50].
+			[85, 100, 111].
+			[392, 556, 777, 890].
+
+		Level: 3
+			[5, 10].
+			[30, 40].
+			[55, 56, 60].
+			[70, 78, 80].
+			[87, 90].
+			[101, 103].
+			[123, 176].
+			[234, 345].
+			[399, 500].
+			[566, 639, 666].
+			[799, 888].
+			[911, 987].
+
+
+
+Please choose from the following action.  Please enter the number of action you want to execute:
+	1. Insert an item to the BTree.
+	2. Insert a data by reading data file.
+	3. Search an item from BTree.
+	4. Print in In-Order Traversal.
+	5. Print in Level-Order Traversal
+	6. Quit
+
+Please enter the action code: 6
+Thank you
+
+Process finished with exit code 0
